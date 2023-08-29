@@ -1,0 +1,57 @@
+/* Home Page Styling */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+                url('../images/cloud.png') center/cover no-repeat;
+    color: #fff;
+  }
+  
+  .main-content {
+    transform: translateY(-30px);
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .features-section {
+    display: flex;
+     justify-content: space-around;     
+  }
+  
+  .feature {
+    flex: 0 0 30%;
+    padding: 20px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .feature i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  

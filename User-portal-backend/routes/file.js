@@ -1,6 +1,8 @@
 const express = require('express');
 const multer = require('multer'); // For handling file uploads
 const File = require('../models/File');
+const verifyToken = require('../middleware/verifyToken');
+const User = require('../models/User');
 
 const router = express.Router();
 
@@ -9,7 +11,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 // File upload route
-router.post('/upload', upload.single('file'), async (req, res) => {
+router.post('/upload', verifyToken, upload.single('file'), async (req, res) => {
   try {
     // Get file data from the request
     const fileData = req.file;
@@ -19,9 +21,11 @@ router.post('/upload', upload.single('file'), async (req, res) => {
       filename: fileData.originalname,
       fileType: fileData.mimetype,
       dateUploaded: new Date(),
-      user: req.user._id, // Assuming you're using authentication
+      user: req.user, 
       fileData: fileData.buffer,
     });
+
+    
 
     await newFile.save();
 
