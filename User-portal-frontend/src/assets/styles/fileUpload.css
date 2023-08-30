@@ -1,0 +1,114 @@
+/* FileUpload.css */
+.file-upload-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-upload-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.file-upload-container p {
+  color: #666;
+}
+
+
+.upload-content button {
+  margin-top: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+.faq-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.faq-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.faq-section p {
+  margin-bottom: 10px;
+}
+
+.faq-section strong {
+  color: #333;
+}
+
+
+.file-upload-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-image-container {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.upload-image {
+  max-width: 150px;
+}
+
+.upload-image-container span {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #007bff;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-input-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.upload-input-container button:hover {
+  background-color: #0056b3;
+}
+
+.upload-message {
+  margin-top: 10px;
+  color: #007bff;
+  font-size: 14px;
+}

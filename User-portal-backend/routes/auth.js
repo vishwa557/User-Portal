@@ -11,6 +11,9 @@ router.post(
   '/signup',
   [
     body('email').isEmail().withMessage('Invalid email'),
+    body('phoneNumber')
+    .isLength({ min: 10, max: 10 }).withMessage('Phone number must be 10 digits')
+    .isNumeric().withMessage('Phone number must consist of numbers only'),
     body('password')
       .isLength({ min: 8 })
       .withMessage('Password must be at least 8 characters')
@@ -30,7 +33,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { email, password, name } = req.body;
+    const { email, password, name, phoneNumber } = req.body;
 
     try {
       // Check if user already exists
@@ -47,6 +50,7 @@ router.post(
         email,
         password: hashedPassword,
         name,
+        phoneNumber,
       });
 
       await newUser.save();

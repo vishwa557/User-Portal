@@ -2,21 +2,26 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../assets/styles/signup.css";
+import config from "../../src/assets/config/config.js";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const serverUrl = config.serverUrl;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/signup", {
+      const response = await axios.post(`${serverUrl}api/auth/signup`, {
         email,
         password,
         name,
+        phoneNumber,
       });
       console.log("Signup successful!", response.data);
+      window.location = "/login";
       // Redirect or perform other actions after successful signup
     } catch (error) {
       console.error("Signup failed:", error);
@@ -47,6 +52,16 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email address"
+            />
+          </div>
+          <div className="form-group">
+            <label>Phone:</label>
+            <input
+              type="number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+              placeholder="Enter your phone number"
             />
           </div>
           <div className="form-group">

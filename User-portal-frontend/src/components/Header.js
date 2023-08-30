@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { NavLink } from "react-router-dom";
 import "../../src/assets/styles/Header.css";
+import avatarImage from "../../src/assets/images/user.jpg";
 
 function Header() {
   const [click, setClick] = useState(false);
@@ -21,6 +22,11 @@ function Header() {
     Cookies.remove("token");
     setLoggedIn(false);
   }
+
+  const navigateTo = (route) => {
+    window.location.href = route;
+  };
+  
 
   return (
     <>
@@ -57,7 +63,43 @@ function Header() {
                   </NavLink>
                 </li>
 
-              
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/list"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={() => setClick(false)}
+                  >
+                    List
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/portal"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={() => setClick(false)}
+                  >
+                    Portal
+                  </NavLink>
+                </li>
+
+                <li className=" profile-icon">
+                  <button
+                    className="nav-avatar"
+                    onClick={() => navigateTo('/profile')}
+                  >
+                    <img
+                      src={avatarImage}
+                      alt="Avatar"
+                      className="avatar-img"
+                    />
+                  </button>
+                </li>
+
                 <li className="nav-item">
                   <NavLink
                     exact

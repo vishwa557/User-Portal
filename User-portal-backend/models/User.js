@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   name: String,
   addresses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Address' }],
-  phoneNumbers: [String],
+  phoneNumber: String,
 });
 
 const User = mongoose.model('User', userSchema);
